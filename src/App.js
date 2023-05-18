@@ -1,15 +1,17 @@
 import React from 'react';
 import {
   ChakraProvider,
-  theme
-
 } from '@chakra-ui/react';
-import Home from './Pages/Home/Home'
+import {
+  RouterProvider,
+} from "react-router-dom";
+import {theme} from './Styles/style'
+import { router } from './Routes/routes';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Home></Home>
+      <RouterProvider router={router}/>
     </ChakraProvider>
   );
 }
