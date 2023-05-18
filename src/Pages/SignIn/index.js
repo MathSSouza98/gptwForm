@@ -104,14 +104,14 @@ export default function SignIn () {
 
             </form>
 
-       </Flex>
-
+            </Flex>
 
             </Box>
+
             <Flex justifyContent={'flex-end'}>
                 
                 <Image w={'595px'} h={'436px'} src={blobBot} position={'absolute'} zIndex={1}/>
-                <Image w={'303px'} h={'419px'} mt={'16px'} src={lineBot} zIndex={2}/>
+                <Image w={'303px'} h={'418px'} mt={'18px'} src={lineBot} zIndex={2}/>
 
             </Flex>
         </Flex>
