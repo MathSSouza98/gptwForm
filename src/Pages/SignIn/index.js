@@ -98,7 +98,7 @@ export default function SignIn () {
                     <Link color={'#E60000'}>Esqueci minha senha<ChevronRightIcon/></Link>
                 </Flex>
                 
-                <Button type="submit" mt={'20px'} w={'497px'} h={'56px'} bg={'brand.customRed'} _hover={{bg:'#000'}} color={"white"} isDisabled={disabled}>
+                <Button type="submit" mt={'20px'} w={'497px'} h={'56px'} bg={'brand.customRed'} _hover={'none'} color={"white"} isDisabled={disabled}>
                     Fazer login
                 </Button>
 
