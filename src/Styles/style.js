@@ -1,4 +1,54 @@
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from "@chakra-ui/react";
+import { radioAnatomy } from '@chakra-ui/anatomy';
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
+
+const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(radioAnatomy.keys);
+  
+const baseStyle = definePartsStyle({
+  control: {
+    borderRadius: 50,
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: "brand.customRed",
+    background: "white",
+  }
+});
+
+const variants = {
+  groove: definePartsStyle({
+    control: {
+      borderRadius: 50,
+      borderWidth: "1px",
+      borderStyle: "solid",
+      borderColor: "brand.customRed",
+      background: "white",
+
+      _checked: {
+        borderWidth: "1px",
+        background: "white",
+        padding: "7px",
+        borderColor: "brand.customRed",
+        _hover: {
+          bg: "none",
+          borderColor: "none"
+        },
+        _before: {
+          background: "brand.customRed",
+          padding: "4px"
+        }
+      },
+      _hover: {
+        bg: "white",
+        borderColor: "brand.customRed"
+      }
+    }
+  })
+};
+
+const radioTheme = defineMultiStyleConfig({
+  baseStyle,
+  variants,
+});
 
 export const theme = extendTheme ({
     colors: {
@@ -11,10 +61,12 @@ export const theme = extendTheme ({
           buttonMid: "#174BD6",
           buttonBot: "#40BF91",
         }
-
     },
     fonts: {
       heading: `'Raleway', sans-serif`,
       body: `'Raleway', sans-serif`,
+    },
+    components: {
+      Radio: radioTheme,
     },
 })
